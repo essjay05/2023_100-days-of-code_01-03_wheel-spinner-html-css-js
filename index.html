@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="style.css"/>
+  <title>HTMl/CSS/JS Food Wheel</title>
+</head>
+<body>
+  <header>
+    <h1>JK Wheel Spinner</h1>
+  </header>
+  <main>
+    <div class="container">
+      <button class="spinBtn" onclick="spinWheel">Spin</button>
+      <div class="wheel">
+        <div class="wheel-slice" style="--i:1;--clr:#FFC312;">
+          <span>Sushi</span>
+        </div>
+        <div class="wheel-slice" style="--i:2;--clr:#EE5A24;">
+          <span>Vietnamese</span>
+        </div>
+        <div class="wheel-slice" style="--i:3;--clr:#B53471;">
+          <span>Burgers</span>
+        </div>
+        <div class="wheel-slice" style="--i:4;--clr:#9980FA;">
+          <span>K-BBQ</span>
+        </div>
+        <div class="wheel-slice" style="--i:5;--clr:#12CBC4;">
+          <span>Hot Pot</span>
+        </div>
+        <div class="wheel-slice" style="--i:6;--clr:#1289A7;">
+          <span>Pizza</span>
+        </div>
+        <div class="wheel-slice" style="--i:7;--clr:#0652DD;">
+          <span>Dim Sum</span>
+        </div>
+        <div class="wheel-slice" style="--i:8;--clr:#009432;">
+          <span>Mexican</span>
+        </div>
+        <div class="wheel-slice" style="--i:9;--clr:#A3CB38;">
+          <span>Thai</span>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
+
+<script>
+  let wheel = document.querySelector('.wheel')
+  let spinBtn = document.querySelector('.spinBtn')
+  let value = Math.ceil(Math.random() * 3600)
+
+  function spinWheel () {
+    console.log('spinBtn clicked')
+    wheel.style.transform = `rotate(${value}deg)`;
+    value += Math.ceil(Math.random() * 3600);
+  }
+</script>
