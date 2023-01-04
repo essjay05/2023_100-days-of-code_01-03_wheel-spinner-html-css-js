@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="style.css"/>
+  <script type="text/javascript" src="script.js"></script>
   <title>HTMl/CSS/JS Food Wheel</title>
 </head>
 <body>
@@ -13,7 +14,7 @@
   </header>
   <main>
     <div class="container">
-      <button class="spinBtn" onclick="spinWheel">Spin</button>
+      <button class="spinBtn" onclick="spinWheel()">Spin</button>
       <div class="wheel">
         <div class="wheel-slice" style="--i:1;--clr:#FFC312;">
           <span>Sushi</span>
@@ -48,14 +49,3 @@
 </body>
 </html>
 
-<script>
-  let wheel = document.querySelector('.wheel')
-  let spinBtn = document.querySelector('.spinBtn')
-  let value = Math.ceil(Math.random() * 3600)
-
-  function spinWheel () {
-    console.log('spinBtn clicked')
-    wheel.style.transform = `rotate(${value}deg)`;
-    value += Math.ceil(Math.random() * 3600);
-  }
-</script>
